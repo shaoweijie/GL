@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.account.AccountActivityVM">
+
+    <com.hancher.common.view.toolbar.SuperToolbar
+        android:id="@+id/superToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="蓝牙测试" />
+
+    <Button
+        android:id="@+id/btn_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="扫描"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/superToolbar" />
+
+
+    <Button
+        android:id="@+id/btn_connect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="链接"
+        app:layout_constraintStart_toEndOf="@+id/btn_search"
+        app:layout_constraintTop_toBottomOf="@+id/superToolbar" />
+
+    <Button
+        android:id="@+id/btn_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="断开"
+        app:layout_constraintStart_toEndOf="@+id/btn_connect"
+        app:layout_constraintTop_toBottomOf="@+id/superToolbar" />
+
+
+    <Button
+        android:id="@+id/btn_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="清空日志"
+        app:layout_constraintStart_toEndOf="@+id/btn_stop"
+        app:layout_constraintTop_toBottomOf="@+id/superToolbar" />
+
+    <Button
+        android:id="@+id/btn_old"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="配对过的设备"
+        app:layout_constraintTop_toBottomOf="@+id/btn_search" />
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="duan"
+        app:layout_constraintStart_toEndOf="@+id/btn_old"
+        app:layout_constraintTop_toBottomOf="@+id/btn_search" />
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/superToolbar"
+        app:layout_constraintTop_toBottomOf="@+id/btn_old" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical"
+                android:text="TextView"/>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

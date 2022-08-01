@@ -1,0 +1,51 @@
+[{
+  "title": "视频海报制作",
+  "description": "从视频中截取图片，拼接成海报",
+  "packageName": "com.hancher.gamelife",
+  "className": "com.hancher.gamelife.test.CapturePictureInVideoActivity"
+}, {
+  "title": "伸展标题栏测试",
+  "description": "toolbar有收缩和扩展的效果",
+  "packageName": "com.hancher.gamelife",
+  "className": "com.hancher.gamelife.test.AppBarTestActivity"
+}, {
+  "title": "浏览器测试",
+  "description": "测试本地html在浏览器的支持情况",
+  "packageName": "com.hancher.gamelife",
+  "className": "com.hancher.gamelife.test.BrowerTestActivity"
+}, {
+  "title": "列表测试",
+  "description": "列表测试",
+  "packageName": "com.hancher.gamelife",
+  "className": "com.hancher.gamelife.test.ListTestActivity"
+}, {
+  "title": "zxing测试",
+  "description": "二维码扫描测试",
+  "packageName": "com.hancher.gamelife",
+  "className": "com.hancher.gamelife.test.ZxingTestActivity"
+}, {
+  "title": "错误测试",
+  "description": "在按钮中放置一个空指针",
+  "packageName": "com.hancher.gamelife",
+  "className": "com.hancher.gamelife.test.ErrorActivity"
+}, {
+  "title": "MMKV读写测试",
+  "description": "MMKV读写测试",
+  "packageName": "com.hancher.gamelife",
+  "className": "com.hancher.gamelife.test.MmkvTestActivity"
+}, {
+  "title": "MVVM v3.0测试",
+  "description": "MVVM v3.0测试",
+  "packageName": "com.hancher.gamelife",
+  "className": "com.hancher.gamelife.test.MVVM3TestActivity"
+}, {
+  "title": "PermissionX测试",
+  "description": "PermissionX测试",
+  "packageName": "com.hancher.gamelife",
+  "className": "com.hancher.gamelife.test.PermissionXTestActivity"
+}, {
+  "title": "和风天气测试",
+  "description": "测试烟台实时天气",
+  "packageName": "com.hancher.gamelife",
+  "className": "com.hancher.gamelife.test.WeatherHeTestActivity"
+}]

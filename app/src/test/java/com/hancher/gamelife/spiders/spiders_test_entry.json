@@ -1,0 +1,13 @@
+{
+  "index": 1,
+  "data": [
+    {
+      "url": "http://www.baidu.com",
+      "pattern": "xxx"
+    },
+    {
+      "url": "http://www.163.com",
+      "pattern": "yyy"
+    }
+  ]
+}

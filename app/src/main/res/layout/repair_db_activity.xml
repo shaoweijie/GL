@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.account.AccountActivityVM">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn_repair_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="补全笔记表中创建时间、更新时间、是否删除" />
+
+                <Button
+                    android:id="@+id/btn_repair_account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="补全账户表中创建时间、更新时间、是否删除" />
+
+                <Button
+                    android:id="@+id/btn_import_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="导入时光序资源" />
+
+                <Button
+                    android:id="@+id/btn_local_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="修复笔记表中的定位经纬度写反" />
+
+                <Button
+                    android:id="@+id/btn_test_net"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="下载图片" />
+
+                <Button
+                    android:id="@+id/btn_net_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="获取网络信息" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_log"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="备份详情：\n" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

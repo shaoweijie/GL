@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <shortcut
+        android:shortcutId="shortcut_add_note"
+        android:enabled="true"
+        android:icon="@drawable/item_note"
+        android:shortcutShortLabel="@string/shortcut_addnote"
+        android:shortcutLongLabel="@string/shortcut_addnote"
+        android:shortcutDisabledMessage="@string/shortcut_addnote"
+        tools:targetApi="n_mr1">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.hancher.gamelife"
+            android:targetClass="com.hancher.gamelife.note.NoteRichEditActivity" />
+        <categories android:name="android.shortcut.conversation"/>
+    </shortcut>
+
+    <shortcut
+        android:shortcutId="shortcut_colockin_list"
+        android:enabled="true"
+        android:icon="@drawable/colock_in"
+        android:shortcutShortLabel="@string/shortcut_colockin_list"
+        android:shortcutLongLabel="@string/shortcut_colockin_list"
+        android:shortcutDisabledMessage="@string/shortcut_colockin_list"
+        tools:targetApi="n_mr1">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.hancher.gamelife"
+            android:targetClass="com.hancher.gamelife.colockin.ColockInActivity" />
+        <categories android:name="android.shortcut.conversation"/>
+    </shortcut>
+
+</shortcuts>

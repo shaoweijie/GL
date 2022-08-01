@@ -1,0 +1,39 @@
+ext {
+    compileSdkVersion = 30
+    buildToolsVersion = "30.0.3"
+    minSdkVersion = 21
+    targetSdkVersion = 30
+    // 构建前修改
+    storeFile = '..\\key\\GameLifeDev.jks'
+    storePassword = 'Password'
+    keyAlias = 'Alias'
+    keyPassword = 'Password'
+}// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        maven{ url 'https://maven.aliyun.com/repository/public'} //代替 jcenter() 和 central()
+        maven{ url 'https://maven.aliyun.com/repository/google'} //代替 google()
+        maven{ url 'https://maven.aliyun.com/repository/gradle-plugin'} //代替 https://plugins.gradle.org/m2/
+        maven { url "https://jitpack.io" } //jitpack
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.2.1" //对应自己AndroidStudio版本号
+        classpath 'org.greenrobot:greendao-gradle-plugin:3.3.0'//JitPack插件
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        maven{ url 'https://maven.aliyun.com/repository/public'} //代替 jcenter() 和 central()
+        maven{ url 'https://maven.aliyun.com/repository/google'} //代替 google()
+        maven{ url 'https://maven.aliyun.com/repository/gradle-plugin'} //代替 https://plugins.gradle.org/m2/
+        maven { url "https://jitpack.io" } //jitpack
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

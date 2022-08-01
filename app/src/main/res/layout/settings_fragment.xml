@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/h_back"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:id="@+id/h_head"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/h_back"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <com.hancher.common.view.StrokeTextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/user_line"
+                android:text="张三"
+                android:textSize="17sp" />
+
+            <com.hancher.common.view.StrokeTextView
+                android:id="@+id/user_line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="15dp"
+                android:text=" | "
+                android:textSize="17sp" />
+
+            <com.hancher.common.view.StrokeTextView
+                android:id="@+id/user_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@id/user_line"
+                android:text="182****5882"
+                android:textSize="17sp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

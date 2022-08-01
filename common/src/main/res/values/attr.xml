@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--多选日历属性-->
+    <declare-styleable name="DulidayCalendar">
+        <attr name="multiselect" format="boolean" />
+    </declare-styleable>
+    <!--横行进度条-->
+    <declare-styleable name="HorizontalProgressBarWithNumber">
+        <attr name="progress_unreached_color" format="color" />
+        <attr name="progress_reached_color" format="color" />
+        <attr name="progress_reached_bar_height" format="dimension" />
+        <attr name="progress_unreached_bar_height" format="dimension" />
+        <attr name="progress_text_size" format="dimension" />
+        <attr name="progress_text_color" format="color" />
+        <attr name="progress_text_offset" format="dimension" />
+        <attr name="progress_text_visibility" format="enum">
+            <enum name="visible" value="0" />
+            <enum name="invisible" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <!--圆形横行进度条-->
+    <declare-styleable name="RoundProgressBarWidthNumber">
+        <attr name="radius" format="dimension" />
+    </declare-styleable>
+
+    <!--    描边文本框 废弃-->
+    <declare-styleable name="StrokeTextView">
+        <attr name="has_border" format="boolean" />
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+    </declare-styleable>
+
+    <!--    流布局-->
+    <declare-styleable name="TagFlowLayout">
+        <!--最大选择数量-->
+        <attr name="max_select" format="integer" />
+        <!--最大可显示行数-->
+        <attr name="limit_line_count" format="integer" />
+        <!--是否设置多行隐藏-->
+        <attr name="is_limit" format="boolean" />
+        <attr name="tag_gravity">
+            <enum name="left" value="-1" />
+            <enum name="center" value="0" />
+            <enum name="right" value="1" />
+        </attr>
+    </declare-styleable>
+</resources>

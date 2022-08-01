@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".activity.SearchActivity">
+
+    <!--标题栏-->
+    <LinearLayout
+        android:id="@+id/cl_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:src="@drawable/ic_action_navigation_arrow_back" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@drawable/search_item_background"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginLeft="0dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            app:layout_constraintLeft_toRightOf="@+id/iv_back"
+            app:layout_constraintRight_toLeftOf="@+id/iv_search"
+            tools:layout_editor_absoluteY="10dp">
+
+            <EditText
+                android:id="@+id/edit_query"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="请输入搜索关键字"
+                android:imeOptions="actionSearch"
+                android:singleLine="true"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/iv_clear_search"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_delete" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:text="确认" />
+    </LinearLayout>
+
+    <!--历史搜索-->
+    <LinearLayout
+        android:id="@+id/ll_history_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingTop="8dp"
+        android:paddingRight="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_history_hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="搜索历史"
+                android:textColor="#383838"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/clear_all_records"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_delete_history" />
+        </LinearLayout>
+
+        <!--        标签控件
+                    app:limit_line_count="3"
+                    app:is_limit="true"-->
+        <com.hancher.common.view.flowlayout.TagFlowLayout
+            android:id="@+id/fl_search_records"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            app:max_select="1" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_history_content">
+
+    </ListView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

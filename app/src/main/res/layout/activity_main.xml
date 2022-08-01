@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".main.GameLifeMvpActivity">
+
+    <com.hancher.common.view.toolbar.SuperToolbar
+        android:id="@+id/superToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="列表"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/viewpagertab"
+        app:layout_constraintBottom_toTopOf="@+id/viewpagertab"
+        app:layout_constraintTop_toBottomOf="@+id/superToolbar" />
+
+    <com.flyco.tablayout.CommonTabLayout
+        android:id="@+id/viewpagertab"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        app:elevation="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:tl_iconGravity="TOP"
+        app:tl_iconHeight="25dp"
+        app:tl_iconMargin="5dp"
+        app:tl_iconWidth="25dp"
+        app:tl_indicator_bounce_enable="false"
+        app:tl_indicator_color="#2C97DE"
+        app:tl_indicator_gravity="BOTTOM"
+        app:tl_textSelectColor="#2C97DE"
+        app:tl_textUnselectColor="#66000000"
+        app:tl_textsize="10sp"
+        app:tl_underline_color="#DDDDDD"
+        app:tl_underline_gravity="TOP"
+        app:tl_underline_height="1dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_float"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="70dp"
+        android:clickable="true"
+        android:transitionName="btn_float"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/plus"
+        android:layout_marginRight="16dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

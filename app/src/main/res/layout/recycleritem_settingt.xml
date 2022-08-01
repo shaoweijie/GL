@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/size"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/top_line"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#CCCCCC"
+        android:visibility="gone" />
+
+    <View
+        android:id="@+id/head_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="50dp"
+        android:background="#CCCCCC"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/line_item"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/item_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="40dp"
+            app:srcCompat="@drawable/item_repair" />
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:paddingLeft="10dp"
+            android:text="TextView"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/right_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/right" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/foot_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="50dp"
+        android:background="#CCCCCC"
+        android:visibility="gone" />
+    <View
+        android:id="@+id/bottom_line"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#CCCCCC"
+        android:visibility="gone" />
+
+</LinearLayout>

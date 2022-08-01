@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/login_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <!--        <ImageView-->
+        <!--            android:id="@+id/user_icon"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:padding="5dp"-->
+<!--            android:scaleType="fitXY"-->
+<!--            android:src="@drawable/title" />-->
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:gravity="center"
+            android:text="游戏人生"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/loginbg2"
+            android:textSize="72sp" />
+
+        <FrameLayout
+            android:id="@+id/username_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/login_input_username"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/edittext_selector"
+                android:hint="@string/username"
+                android:minHeight="40dp"
+                android:paddingLeft="40dp"
+                android:paddingRight="60dp"
+                android:singleLine="true"
+                android:textColor="@color/color_599ad2"
+                android:textColorHint="@color/color_B1AFAE"
+                android:textCursorDrawable="@drawable/edittext_cursor" />
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="21dp"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/user"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/del_username_btn"
+                android:layout_width="@dimen/dp_15"
+                android:layout_height="@dimen/dp_15"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/delete"
+                android:visibility="invisible" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/passwd_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/login_input_password"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/edittext_selector"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:maxLength="20"
+                android:minHeight="40dp"
+                android:paddingLeft="40dp"
+                android:paddingRight="60dp"
+                android:singleLine="true"
+                android:textColor="@color/color_599ad2"
+                android:textColorHint="@color/color_B1AFAE"
+                android:textCursorDrawable="@drawable/edittext_cursor" />
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="21dp"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/passwd" />
+
+            <Button
+                android:id="@+id/del_passwd_btn"
+                android:layout_width="@dimen/dp_15"
+                android:layout_height="@dimen/dp_15"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/delete"
+                android:visibility="invisible" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/forget_pwd"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:background="#00000000"
+                android:gravity="right|center_vertical"
+                android:text="@string/forget_password"
+                android:textColor="@color/color_3492D6"
+                android:textSize="16sp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <CheckBox
+                android:id="@+id/remember_pwd"
+                style="@style/checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:drawablePadding="5dp"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="4dp"
+                android:text="@string/remember"
+                android:textColor="@color/color_3492D6"
+                android:textSize="16sp" />
+        </LinearLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp">
+
+            <Button
+                android:id="@+id/login_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_selector"
+                android:gravity="center"
+                android:text="@string/login_now"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="22dp" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="@style/Loading_circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/register_pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="#00000000"
+            android:gravity="center"
+            android:text="@string/register"
+            android:textColor="@color/color_3492D6"
+            android:textSize="16sp" />
+    </LinearLayout>
+</ScrollView>

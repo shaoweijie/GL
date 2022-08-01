@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="tab_background">@color/ios_white</color>
+    <color name="transparent">#00000000</color><!--透明色-->
+    <color name="splashColor">#80408A</color><!--闪图色-->
+    <color name="background">@color/ios_white</color><!--背景白-->
+
+    <color name="grey_c0c0c0">#c0c0c0</color>
+    <color name="black_333333">#333333</color>
+    <color name="purple_bb38f8">#bb38f8</color>
+    <color name="gray_f0f0f0">#f0f0f0</color>
+    <color name="gray_9e9e9e">#9e9e9e</color>
+    <color name="app_color">#f23b4c</color>
+    <color name="app_color_background">#f4f4f4</color>
+    <color name="color_599ad2">#599ad2</color>
+    <color name="color_B1AFAE">#B1AFAE</color>
+    <color name="color_4512c9">#4512c9</color>
+    <color name="color_9f9f9f">#9f9f9f</color>
+    <color name="color_f2f2f2">#f2f2f2</color>
+    <color name="color_ff6000">#ff6000</color>
+    <color name="color_E5E5E5">#E5E5E5</color>
+    <color name="color_3492D6">#3492D6</color>
+
+    <!--material 颜色组-->
+    <color name="material_red">#f44336</color>
+    <color name="material_pink">#E91E63</color>
+    <color name="material_purple">#9C27B0</color>
+    <color name="material_deep_purple">#673AB7</color>
+    <color name="material_indigo">#3F51B5</color>
+    <color name="material_blue">#2196F3</color>
+    <color name="material_light_blue">#03A9F4</color>
+    <color name="material_cyan">#00BCD4</color>
+    <color name="material_teal">#009688</color>
+    <color name="material_green">#4CAF50</color>
+    <color name="material_light_green">#8BC34A</color>
+    <color name="material_lime">#CDDC39</color>
+    <color name="material_yellow">#FFEB3B</color>
+    <color name="material_amber">#FFC107</color>
+    <color name="material_orange">#FF9800</color>
+    <color name="material_deep_orange">#FF5722</color>
+    <color name="material_brown">#795548</color>
+    <color name="material_grey">#9E9E9E</color>
+    <color name="material_blue_grey">#607D8B</color>
+
+    <!-- ios 颜色组 -->
+    <color name="ios_white">#FAFAFA</color><!--背景白-->
+    <color name="ios_green">#53D669</color><!--开关绿-->
+    <color name="ios_grey">#B6B6B6</color><!--开关绿-->
+</resources>

@@ -1,0 +1,6 @@
+rootProject.name = "GameLife"
+include ':app'
+//include ':tv'
+//include ':weather'
+
+include ':common'

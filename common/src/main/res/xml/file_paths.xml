@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!--
+    //每个节点都支持两个属性：name+path
+    //path：需要临时授权访问的路径（.代表所有路径）
+    //name：就是你给这个访问路径起个名字
+    注意：这个顺序很重要，一旦找到对应规则，则不再执行后续规则
+    -->
+    <files-path
+        name="files"
+        path="." />
+    <cache-path
+        name="cache"
+        path="." />
+    <external-files-path
+        name="external_file"
+        path="." />
+    <external-cache-path
+        name="external_cache"
+        path="." />
+    <!--getExternalMediaDirs(), 要求API21+ -->
+    <external-media-path
+        name="external_media"
+        path="." />
+
+    <external-path
+        name="external"
+        path="." />
+    <!--    代表设备的根目录new File("/");-->
+    <!--    <root-path name="root" path="" />-->
+
+</paths>

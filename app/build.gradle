@@ -1,0 +1,183 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao' // 数据库
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    defaultConfig {
+        applicationId "com.hancher.gamelife"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 121 // 发布
+        versionName "0.28" // 发布
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+
+    // jdk
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    // 双向绑定
+    buildFeatures {
+        viewBinding true     // view binding 替换 butterknife.20200829
+        dataBinding true    // data binding 双向绑定
+    }
+    // 构建报错
+    lintOptions {
+        // true--关闭lint报告的分析进度
+        quiet true
+        // true--错误发生后停止gradle构建
+        abortOnError false
+        // true--只报告error
+        ignoreWarnings true
+        // true--忽略有错误的文件的全/绝对路径(默认是true)
+        //absolutePaths true
+        // true--检查所有问题点，包含其他默认关闭项
+        checkAllWarnings true
+        // true--所有warning当做error
+        warningsAsErrors true
+        // 关闭指定问题检查
+        disable 'TypographyFractions','TypographyQuotes'
+        // 打开指定问题检查
+        enable 'RtlHardcoded','RtlCompat', 'RtlEnabled'
+        // 仅检查指定问题
+        check 'NewApi', 'InlinedApi'
+        // true--error输出文件不包含源码行号
+        noLines true
+        // true--显示错误的所有发生位置，不截取
+        showAll true
+        // 回退lint设置(默认规则)
+        lintConfig file("default-lint.xml")
+        // true--生成txt格式报告(默认false)
+        textReport true
+        // 重定向输出；可以是文件或'stdout'
+        textOutput 'stdout'
+        // true--生成XML格式报告
+        xmlReport false
+        // 指定xml报告文档(默认lint-results.xml)
+        xmlOutput file("lint-report.xml")
+        // true--生成HTML报告(带问题解释，源码位置，等)
+        htmlReport true
+        // html报告可选路径(构建器默认是lint-results.html )
+        htmlOutput file("lint-report.html")
+        //  true--所有正式版构建执行规则生成崩溃的lint检查，如果有崩溃问题将停止构建
+        checkReleaseBuilds true
+        // 在发布版本编译时检查(即使不包含lint目标)，指定问题的规则生成崩溃
+        fatal 'NewApi', 'InlineApi'
+        // 指定问题的规则生成错误
+        error 'Wakelock', 'TextViewEdits'
+        // 指定问题的规则生成警告
+        warning 'ResourceAsColor'
+        // 忽略指定问题的规则(同关闭检查)
+        ignore 'TypographyQuotes'
+    }
+    // ndk配置
+    sourceSets {
+        main {
+            jniLibs.srcDir 'libs'
+            jni.srcDirs = []    //disable automatic ndk-build
+        }
+    }
+
+    // 签名
+    signingConfigs {
+        debug {
+            storeFile file(rootProject.ext.storeFile)
+            storePassword rootProject.ext.storePassword
+            keyAlias rootProject.ext.keyAlias
+            keyPassword rootProject.ext.keyPassword
+        }
+        release {
+            storeFile file(rootProject.ext.storeFile)
+            storePassword rootProject.ext.storePassword
+            keyAlias rootProject.ext.keyAlias
+            keyPassword rootProject.ext.keyPassword
+        }
+    }
+    // 签名
+    buildTypes {
+        release {
+            minifyEnabled true
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+    // 打包重命名
+    applicationVariants.all {
+        variant ->
+            variant.outputs.all {
+                //这里修改apk文件名
+                outputFileName = "${rootProject.name}_v${variant.versionName}_${variant.name}_${releaseTime()}.apk"
+            }
+    }
+
+    // 重复模块
+//    configurations {
+//        all {
+//            exclude module: 'xpp3'
+//        }
+//    }
+}
+//打包重命名
+static def releaseTime() {
+    return new Date().format("yyyyMMdd", TimeZone.getTimeZone("Asia/Shanghai"))
+}
+
+greendao {
+    schemaVersion 14 //当前数据库版本
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation project(path: ':common')
+
+    implementation 'com.sun.mail:android-mail:1.6.0'
+    implementation 'com.sun.mail:android-activation:1.6.0'
+    implementation "com.daimajia.swipelayout:library:1.2.0@aar" //rw 滑动item
+    implementation 'com.guolindev.permissionx:permissionx:1.6.1'//权限申请
+    implementation 'org.greenrobot:greendao:3.3.0' // 数据库
+    implementation 'com.zhy:flowlayout-lib:1.0.3'//流布局
+    implementation 'com.wdullaer:materialdatetimepicker:4.2.3'//日期选择器
+    implementation 'com.haibin:calendarview:3.7.0'//阴历阳历 Calendar View
+    implementation 'cn.6tail:lunar:1.1.16'//阴历阳历转换工具
+    implementation 'me.zhouzhuo.zzimagebox:zz-image-box:1.1.2'// 加号增加图片
+    implementation 'jp.wasabeef:richeditor-android:2.0.0'//富文本编辑器
+    implementation 'com.race604.waveloading:library:1.1.1' //波浪加载
+    implementation 'androidx.viewpager:viewpager:1.0.0' // vp
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0' // 下拉
+    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'// 选项卡
+    implementation 'org.xclcharts:lib:2.4' //图表
+    implementation 'com.gitee.Hancher:contribution-view:1.0.6'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+
+    implementation 'com.shuyu:GSYVideoPlayer:8.1.0'
+
+    //implementation 'org.apache.poi:poi-ooxml:3.14'
+    //贡献图
+//    implementation 'androidx.cardview:cardview:1.0.0' // 卡片
+
+//    implementation 'com.mylhyl:circleDialog:5.3.4'//圆角Dialog  https://github.com/mylhyl/Android-CircleDialog
+//    implementation 'com.shuyu:GSYVideoPlayer:7.1.8'//视频播放器
+//    implementation 'net.sourceforge.jexcelapi:jxl:2.6.12'//poi office操作工具
+//    debugImplementation 'com.glance.guolindev:glance:1.0.0-alpha01'//debug下数据库工具
+//    implementation 'net.zetetic:android-database-sqlcipher:3.5.7@aar'//数据库加密
+//    implementation 'com.github.ashqal:MD360Player4Android:2.5.0'//360效果的播放器 全景图
+
+    implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
+    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
+    implementation 'androidx.core:core:1.6.0'
+// https://github.com/journeyapps/zxing-android-embedded
+
+    //测试
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    configurations {    all*.exclude group: 'javax.activation', module: 'activation'}
+}

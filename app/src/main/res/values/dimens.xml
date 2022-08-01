@@ -1,0 +1,5 @@
+<resources>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="human_edit_left_weight">1</dimen>
+    <dimen name="human_edit_left_right">2</dimen>
+</resources>
